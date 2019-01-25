@@ -1,0 +1,18 @@
+<div class="container h-100">
+  <div class="d-flex justify-content-center h-100">
+    <div *ngIf="!mode" class="searchbar">
+      <input [(ngModel)]="pokename" class="search_input" type="text" name="" placeholder="Search...">
+      <a href="#" class="search_icon" (click)="getPokemon()"><i class="fas fa-search"></i></a>
+    </div>
+    <div class="poke-item" *ngIf="mode">
+      <h2 class="display-2">This is {{pokemon.name}}</h2>
+      <h4 class="display-4">Type {{pokemon.type}}</h4>
+      <img [src]="pokemon.img">
+      <h4 class="display-4">It weights {{pokemon.weight}} units</h4>
+    </div>
+  </div>
+</div>
+<div>
+  <ul>
+  </ul>
+</div>
