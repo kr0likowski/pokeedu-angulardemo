@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient} from '@angular/common/http';
 import {Pokemon} from './pokemon/pokemon';
+import {PokedataService} from '../pokedata.service';
+import {HttpClient} from '@angular/common/http';
 
 @Component({
   selector: 'app-poke-search',
   templateUrl: './poke-search.component.html',
-  styleUrls: ['./poke-search.component.css']
+  styleUrls: ['./poke-search.component.css'],
+  providers: [PokedataService],
 })
 export class PokeSearchComponent implements OnInit {
   fullurl: string;
@@ -13,19 +15,18 @@ export class PokeSearchComponent implements OnInit {
   pokename: string;
   url: string;
   mode: boolean;
-  extractData(jsonx: any) {
-  this.pokemon.name = jsonx.name;
-  this.pokemon.weight = jsonx.weight;
-  this.pokemon.img = jsonx.sprites.front_default;
-  this.pokemon.type = jsonx.types[0].type.name;
-  this.mode = true;
+  getData(url: string) {
+    this.httpClient.get(url).subscribe((json) => {
+      this.pokemon = this.myService.extractData(json);
+      this.mode = true;
+    });
   }
   getPokemon() {
     this.fullurl = this.url + this.pokename + '/';
-  this.httpClient.get(this.fullurl).subscribe((json) => { this.extractData(json);
-  });
+    this.getData(this.fullurl);
   }
-  constructor(private httpClient: HttpClient) {
+
+  constructor(private httpClient: HttpClient, private myService: PokedataService) {
     this.url = 'https:/pokeapi.co/api/v2/pokemon/';
     this.mode = false;
     this.pokemon = new Pokemon;
