@@ -1,8 +1,9 @@
 <div *ngIf="mode == 0"  class="container cnt">
   <div class="row">
     <div class="col-sm" (click)="mode=1"><h2 class="display-2">Types</h2></div>
-    <div class="col-sm" (click)="mode=1"><h2 class="display-2">Abilities</h2></div>
+    <div class="col-sm" (click)="mode=2"><h2 class="display-2">Abilities</h2></div>
     <div class="col-sm" (click)="mode=1"><h2 class="display-2">Items</h2></div>
   </div>
 </div>
 <app-poke-types *ngIf="mode == 1"></app-poke-types>
+<app-poke-abilities *ngIf="mode == 2"></app-poke-abilities>

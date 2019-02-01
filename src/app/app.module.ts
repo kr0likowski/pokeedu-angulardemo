@@ -9,13 +9,15 @@ import {HttpClientModule} from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
 import { PokeExploreComponent } from './poke-explore/poke-explore.component';
 import { PokeTypesComponent } from './poke-explore/poke-types/poke-types.component';
+import { PokeAbilitiesComponent } from './poke-explore/poke-abilities/poke-abilities.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PokeSearchComponent,
     PokeExploreComponent,
-    PokeTypesComponent
+    PokeTypesComponent,
+    PokeAbilitiesComponent
   ],
   imports: [
     BrowserModule,
