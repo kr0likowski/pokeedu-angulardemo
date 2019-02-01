@@ -8,12 +8,14 @@ import {PokedataService} from './pokedata.service';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
 import { PokeExploreComponent } from './poke-explore/poke-explore.component';
+import { PokeTypesComponent } from './poke-explore/poke-types/poke-types.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PokeSearchComponent,
-    PokeExploreComponent
+    PokeExploreComponent,
+    PokeTypesComponent
   ],
   imports: [
     BrowserModule,

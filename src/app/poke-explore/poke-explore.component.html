@@ -1,33 +1,8 @@
-<div class="container cnt">
-  <h1 class="display-4">Basic Pokemon Types</h1>
+<div *ngIf="mode == 0"  class="container cnt">
   <div class="row">
-    <div class="col-sm">
-      <h2 class="display-3">Electric</h2>
-      <img src="../../assets/25.png">
-    </div>
-    <div class="col-sm">
-      <h2 class="display-3">Fire</h2>
-      <img src="../../assets/4-2.png">
-    </div>
-    <div class="col-sm">
-      <h2 class="display-3">Grass</h2>
-      <img src="../../assets/1.png">
-    </div>
+    <div class="col-sm" (click)="mode=1"><h2 class="display-2">Types</h2></div>
+    <div class="col-sm" (click)="mode=1"><h2 class="display-2">Abilities</h2></div>
+    <div class="col-sm" (click)="mode=1"><h2 class="display-2">Items</h2></div>
   </div>
 </div>
-<div class="container cnt">
-  <div class="row">
-    <div class="col-sm">
-      <h2 class="display-3">Water</h2>
-      <img src="../../assets/7.png">
-    </div>
-    <div class="col-sm">
-      <h2 class="display-3">Rock</h2>
-      <img src="../../assets/74.png">
-    </div>
-    <div class="col-sm">
-      <h2 class="display-3">Ground</h2>
-        <img src="../../assets/50.png">
-    </div>
-  </div>
-</div>
+<app-poke-types *ngIf="mode == 1"></app-poke-types>

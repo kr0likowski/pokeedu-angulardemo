@@ -6,8 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./poke-explore.component.css']
 })
 export class PokeExploreComponent implements OnInit {
-
-  constructor() { }
+  mode: number;
+  constructor() {
+    this.mode = 0;
+  }
 
   ngOnInit() {
   }
